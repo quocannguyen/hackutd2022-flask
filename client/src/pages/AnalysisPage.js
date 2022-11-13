@@ -1,8 +1,13 @@
+import {useNavigate} from "react-router-dom"
+import Context from "../context/Context";
+import {useContext} from "react"
+
 function AnalysisPage() {
+  const context = useContext(Context)
+  const navigate = useNavigate();
     return(
         <div
         className={`relative font-medium w-[1440px] h-[865px] bg-[rgba(223,223,223,1)] overflow-clip font-['Rubik']`}
-        style={props.style}
       >
         <div
           className="absolute w-[600px] h-[3px] left-[420px] top-[173px] drop-shadow-lg"
@@ -14,12 +19,12 @@ function AnalysisPage() {
         <p
           className="absolute text-xl leading-normal text-left text-black inline m-0 w-[219px] left-[760px] top-[131px]"
         >
-          Timeframe: 2 Months
+          Timeframe: {context.timeframe}
         </p>
         <p
           className="absolute text-xl leading-normal text-left text-black inline m-0 w-[472px] left-[484px] top-[131px]"
         >
-          Stock Ticker: SPY
+          Stock Ticker: {context.stock}
         </p>
         <div
           className="h-7 absolute gap-8 text-white text-center w-[539px] left-[450px] top-[63px]"
