@@ -11,12 +11,11 @@ app = Flask(__name__)
 def members():
     return {
         "members": ["Member1", "Member2", "Member3"],
-        "yahoofinance": yahoofinance.GetFacebookInformation.earnings
     }
 
 
 if __name__ == "__main__":
-    data = yahoofinance.getStockDataArray("SPY", period="ytd")
-    for datum in data:
-        print(datum)
-    # app.run(debug=True)
+    # data = yahoofinance.getStockDataArray("SPY", period="ytd")
+    # for datum in data:
+    #     print(datum)
+    app.run(debug=True)
